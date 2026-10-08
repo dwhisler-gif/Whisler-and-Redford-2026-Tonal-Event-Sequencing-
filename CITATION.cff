@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this repository in your research, please cite it using the metadata below."
+authors:
+  - family-names: Whisler
+    given-names: D.
+  - family-names: Redford
+    given-names: M.
+  - family-names: "Whisler and Redford"
+    given-names: ""
+title: "Tonal Event Sequencing"
+version: 0.1.0
+date-released: 2026-10-07
+url: "https://github.com/dwhisler-gif/Tonal-Event-Sequencing-"
+abstract: >-
+  Public repository for the experimental materials, methods, analysis scripts,
+  and supplementary documentation associated with the Tonal Event Sequencing
+  project.
+keywords:
+  - neuroscience
+  - experimental-methods
+  - auditory-perception
+  - reproducibility
+  - research-archive
+license: MIT
