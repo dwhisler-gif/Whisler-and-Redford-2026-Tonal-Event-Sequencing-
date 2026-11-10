@@ -905,7 +905,7 @@ library(dplyr)
 library(ggplot2)
 
 # Read the original Gorilla file
-data_raw <- read_excel("C:/xxx/RR-Raw Data/Matrix 4.xlsx")
+data_raw <- read_excel("data/spreadsheets/Matrix 4.xlsx")
 
 # Clean the Gorilla data
 data_clean <- data_raw %>%
@@ -961,7 +961,7 @@ p <- ggplot(accuracy_by_participant, aes(x = factor(ageGroup), y = accuracy)) +
 print(p)
 
 # Read the original Gorilla file
-data_raw <- read_excel("C:/xxx/RR-Raw Data/Matrix 6.xlsx")
+data_raw <- read_excel("data/spreadsheets/Matrix 6.xlsx")
 
 # Clean the Gorilla data
 data_clean <- data_raw %>%
@@ -1017,7 +1017,7 @@ p <- ggplot(accuracy_by_participant, aes(x = factor(ageGroup), y = accuracy)) +
 print(p)
 
 # Read the original Gorilla file
-data_raw <- read_excel("C:/xxx/RR-Raw Data/Matrix Adult.xlsx")
+data_raw <- read_excel("data/spreadsheets/Matrix Adult.xlsx")
 
 # Clean the Gorilla data
 data_clean <- data_raw %>%
@@ -1096,9 +1096,9 @@ read_and_clean <- function(file_path, age_group) {
 }
 
 # Read all three files
-data_age4 <- read_and_clean("C:/xxx/RR-Raw Data/Matrix 4.xlsx", "4")
-data_age6 <- read_and_clean("C:/xxx/Matrix 6.xlsx", "6")
-data_adult <- read_and_clean("C:/xxx/RR-Raw Data/Matrix Adult.xlsx", "Adult")
+data_age4 <- read_and_clean("data/spreadsheets/Matrix 4.xlsx", "4")
+data_age6 <- read_and_clean("data/spreadsheets/Matrix 6.xlsx", "6")
+data_adult <- read_and_clean("data/spreadsheets/Matrix Adult.xlsx", "Adult")
 
 # Combine all data
 all_data <- bind_rows(data_age4, data_age6, data_adult)
@@ -2154,18 +2154,18 @@ cat("\n\n=== BIMODAL ANALYSIS COMPLETE ===\n")
 # ============================================================================
 
 matrix_data_test <- bind_rows(
-  read_excel("C:/xxxRR-Raw Data/Matrix 4.xlsx") %>% mutate(age_group = "4"),
-  read_excel("C:/xxx/RR-Raw Data/Matrix 6.xlsx") %>% mutate(age_group = "6"),
-  read_excel("C:/xxx/RR-Raw Data/Matrix Adult.xlsx") %>% mutate(age_group = "Adult")
+  read_excel("data/spreadsheets/Matrix 4.xlsx") %>% mutate(age_group = "4"),
+  read_excel("data/spreadsheets/Matrix 6.xlsx") %>% mutate(age_group = "6"),
+  read_excel("data/spreadsheets/Matrix Adult.xlsx") %>% mutate(age_group = "Adult")
 ) %>%
   clean_names()
 
 names(matrix_data_test)
 
 matrix_data <- bind_rows(
-  read_excel("C:/xxx/RR-Raw Data/Matrix 4.xlsx") %>% mutate(age_group = "4"),
-  read_excel("C:/xxx/RR-Raw Data/Matrix 6.xlsx") %>% mutate(age_group = "6"),
-  read_excel("C:/xxx/RR-Raw Data/Matrix Adult.xlsx") %>% mutate(age_group = "Adult")
+  read_excel("data/spreadsheets/Matrix 4.xlsx") %>% mutate(age_group = "4"),
+  read_excel("data/spreadsheets/Matrix 6.xlsx") %>% mutate(age_group = "6"),
+  read_excel("data/spreadsheets/Matrix Adult.xlsx") %>% mutate(age_group = "Adult")
 ) %>%
   clean_names() %>%
   mutate(
@@ -3297,7 +3297,7 @@ knitr::kable(accuracy_comparison_age, digits = 3)
 
 ```{r echo = False}
 # Read the data
-data <- read_excel("C:\\Users\\drwhi\\OneDrive\\Desktop\\Really Really Cleaned Data\\Data (0 incorrect, 1 correct)\\RR-Raw Data\\TBW Adult.xlsx")
+data <- read_excel("data/spreadsheets/TBW Adult.xlsx")
 
 # Recode responses so A/Yes = Synch, B/No = Asynch
 processed_data <- data %>%
@@ -3463,7 +3463,7 @@ ci_apa$APA
 
 ```{r echo = False}
 # Read the data
-data <- read_excel("C:\\Users\\drwhi\\OneDrive\\Desktop\\Really Really Cleaned Data\\Data (0 incorrect, 1 correct)\\RR-Raw Data\\TBW 6.xlsx")
+data <- read_excel("data/spreadsheets/TBW 6.xlsx")
 
 processed_data <- data %>%
   mutate(
@@ -3632,7 +3632,7 @@ ci_apa$APA
 
 ```{r echo = False}
 # Read the data
-data <- read_excel("C:\\Users\\drwhi\\OneDrive\\Desktop\\Really Really Cleaned Data\\Data (0 incorrect, 1 correct)\\RR-Raw Data\\TBW 4.xlsx")
+data <- read_excel("data/spreadsheets/TBW 4.xlsx")
 
 processed_data <- data %>%
   mutate(
@@ -3839,11 +3839,11 @@ process_tbw_file <- function(filepath, age_group_name) {
 }
 
 # Now load the files
-tbw_4yr <- process_tbw_file("C:\\Users\\drwhi\\OneDrive\\Desktop\\Really Really Cleaned Data\\Data (0 incorrect, 1 correct)\\RR-Raw Data\\TBW 4.xlsx", "4")
+tbw_4yr <- process_tbw_file("data/spreadsheets/TBW 4.xlsx", "4")
 
-tbw_6yr <- process_tbw_file("C:\\Users\\drwhi\\OneDrive\\Desktop\\Really Really Cleaned Data\\Data (0 incorrect, 1 correct)\\RR-Raw Data\\TBW 6.xlsx", "6")
+tbw_6yr <- process_tbw_file("data/spreadsheets/TBW 6.xlsx", "6")
 
-tbw_adult <- process_tbw_file("C:\\Users\\drwhi\\OneDrive\\Desktop\\Really Really Cleaned Data\\Data (0 incorrect, 1 correct)\\RR-Raw Data\\TBW Adult.xlsx", "Adult")
+tbw_adult <- process_tbw_file("data/spreadsheets/TBW Adult.xlsx", "Adult")
 
 # Combine all age groups
 av_data_all <- bind_rows(tbw_4yr, tbw_6yr, tbw_adult) %>%
@@ -4355,7 +4355,7 @@ library(ggplot2)
 library(tidyr)
 
 # Load data
-file_path <- "C:/xxx/RR_intsintwagegroup.xlsx"
+file_path <- "data/spreadsheets/Segmentation/RR_intsintwagegroup.xlsx"
 df_long <- read_excel(file_path)
 
 library(lme4)
@@ -6221,9 +6221,9 @@ library(effectsize)
 # ============================================================
 
 tbw_files <- list(
-  "4"     = "C:/xxx/RR-Raw Data/TBW 4.xlsx",
-  "6"     = "C:/xxx/RR-Raw Data/TBW 6.xlsx",
-  "Adult" = "C:/xxx/RR-Raw Data/TBW Adult.xlsx"
+  "4"     = "data/spreadsheets/TBW 4.xlsx",
+  "6"     = "data/spreadsheets/TBW 6.xlsx",
+  "Adult" = "data/spreadsheets/TBW Adult.xlsx"
 )
 
 table(cor_data$age_group)
@@ -6361,7 +6361,7 @@ ggplot(cor_data, aes(x = tbw_slope, y = toj_slope, color = age_group)) +
   geom_hline(yintercept = 0, linetype = "dashed", alpha = 0.3) +
   geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.3)
 
-stimval_file_path <- "C:/xxx/Stimulus Validation.xlsx"
+stimval_file_path <- "data/spreadsheets/Stimulus Validation/Stimulus Validation.xlsx"
 stimval_data<- read_excel(stimval_file_path)
 library(readxl)
 library(dplyr)
@@ -6402,7 +6402,7 @@ ggplot(df, aes(x = Direction, y = `Excursion (ST) min-max`)) +
 ```
 
 ```{r echo = False}
-disc_raw <- read_excel("C:/xxx/RR-Raw Data/Discrimination 4.xlsx")
+disc_raw <- read_excel("data/spreadsheets/Discrimination 4.xlsx")
 
 # First, convert Correct to numeric in the raw data
 disc_raw <- disc_raw %>%
@@ -6471,9 +6471,9 @@ library(ggplot2)
 
 # List files
 file_paths <- c(
-  "C:/xxx/RR-Raw Data/Discrimination 4.xlsx",
-  "C:/xxx/RR-Raw Data/Discrimination 6.xlsx",
-  "C:/xxx//RR-Raw Data/Discrimination Adult.xlsx"
+  "data/spreadsheets/Discrimination 4.xlsx",
+  "data/spreadsheets/Discrimination 6.xlsx",
+  "data/spreadsheets/Discrimination Adult.xlsx"
 )
 
 # Read and combine all files
@@ -6552,9 +6552,9 @@ library(ggplot2)
 
 # List files
 file_paths <- c(
-  "C:/xxx/RR-Raw Data/Discrimination 4.xlsx",
-  "C:/xxx/RR-Raw Data/Discrimination 6.xlsx",
-  "C:/xxx/RR-Raw Data/Discrimination Adult.xlsx"
+  "data/spreadsheets/Discrimination 4.xlsx",
+  "data/spreadsheets/Discrimination 6.xlsx",
+  "data/spreadsheets/Discrimination Adult.xlsx"
 )
 
 # Read and combine all files
