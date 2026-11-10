@@ -1,0 +1,37 @@
+
+
+stimval_file_path <- "C:/Users/xxxxxxx/Stimulus Validation.xlsx"
+stimval_data<- read_excel(stimval_file_path)
+
+library(dplyr)
+
+df <- df %>%
+  mutate(
+    Direction = factor(Direction, levels = c("F", "R"),
+                       labels = c("Falling", "Rising")),
+    ExcursionMag = `excursion magnitude (absolute value) min-max`
+  )
+
+library(ggplot2)
+
+ggplot(df, aes(x = Direction, y = ExcursionMag)) +
+  geom_boxplot(width = 0.5, outlier.shape = NA) +
+  geom_jitter(width = 0.15, height = 0, alpha = 0.7, size = 2) +
+  labs(
+    x = "Contour direction",
+    y = "Pitch excursion magnitude (semitones)",
+    title = "Panel A: Stimulus pitch excursions"
+  ) +
+  theme_minimal(base_size = 14)
+
+ggsave("PanelA.png", width = 6, height = 4, dpi = 300)
+
+ggplot(df, aes(x = Direction, y = `Excursion (ST) min-max`)) +
+  geom_boxplot(width = 0.5, outlier.shape = NA) +
+  geom_jitter(width = 0.15, height = 0, alpha = 0.7, size = 2) +
+  labs(
+    x = "Contour direction",
+    y = "Pitch excursion (semitones)",
+    title = "Panel A: Stimulus pitch excursions (signed)"
+  ) +
+  theme_minimal(base_size = 14)
