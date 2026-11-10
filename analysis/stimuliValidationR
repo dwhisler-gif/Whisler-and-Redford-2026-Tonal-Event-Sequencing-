@@ -1,6 +1,6 @@
 
 
-stimval_file_path <- "C:/Users/xxxxxxx/Stimulus Validation.xlsx"
+stimval_file_path <- "data/spreadsheets/Stimulus Validation/Stimulus Validation.xlsx"
 stimval_data<- read_excel(stimval_file_path)
 
 library(dplyr)
