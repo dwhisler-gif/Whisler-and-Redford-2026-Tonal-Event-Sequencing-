@@ -10,8 +10,8 @@ This folder contains scripts, notebooks, and analysis workflows used to process 
 
 ## Current analysis archive
 
-`dataAnalysesR_tonalEventSequencing` is the main analysis source archive. It reads archived Matrix, TBW, and Discrimination workbooks from `data/spreadsheets/`, the segmentation workbook from `data/spreadsheets/Segmentation/`, and stimulus validation data from `data/spreadsheets/Stimulus Validation/`. Run repository-relative paths from the repository root.
+`dataAnalysesR_tonalEventSequencing` is the main analysis source archive. The repository contains Matrix, TBW, and Discrimination age-group workbooks, Gorilla ZIP exports, a demographic workbook, and the Segmentation and Stimulus Validation materials under `data/spreadsheets/`. These materials are distinct from the following inputs referenced by the analysis source, which are absent: `gorilla_export.csv`, `Temporal Order Judgement.xlsx`, `Predictor File.xlsx`, `Matrix Task.xlsx`, and `TBW Measure.xlsx`. Do not assume the archived materials are equivalent substitutes; analysis sections that require the missing inputs cannot be reproduced from the repository contents alone. Run repository-relative paths from the repository root.
 
-The script also refers to inputs that are not currently in this repository, including `gorilla_export.csv`, `Temporal Order Judgement.xlsx`, `Predictor File.xlsx`, `Matrix Task.xlsx`, and `TBW Measure.xlsx`; some references use machine-specific absolute paths. Those sections will need the corresponding authorized inputs and locally adapted paths before they can run.
+Some references use machine-specific absolute paths, which must be adapted locally before those sections can run.
 
 The source loads and installs a number of R packages, but the full dependency set and versions have not been verified. Record the R version and package versions in a reproducible environment specification when the analysis workflow and its required inputs are validated. Generated outputs are currently written to the working directory in several script sections; review output paths before running analyses.

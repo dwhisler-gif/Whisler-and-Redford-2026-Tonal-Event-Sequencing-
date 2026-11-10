@@ -44,7 +44,7 @@ Please follow these norms when adding content:
 
 ## Reproducibility
 
-Run repository-relative script paths from the repository root. Several analyses also use external inputs not currently included here, including `gorilla_export.csv`, `Temporal Order Judgement.xlsx`, `Predictor File.xlsx`, `Matrix Task.xlsx`, and `TBW Measure.xlsx`. The analysis script also installs or loads R packages; a complete, verified dependency specification has not yet been established. See `analysis/README.md` for details.
+The repository includes Matrix, TBW, and Discrimination age-group workbooks, Gorilla ZIP exports, a demographic workbook, and the Segmentation and Stimulus Validation materials under `data/spreadsheets/`. These files do not include or establish equivalence to the following analysis inputs, which are absent: `gorilla_export.csv`, `Temporal Order Judgement.xlsx`, `Predictor File.xlsx`, `Matrix Task.xlsx`, and `TBW Measure.xlsx`. Analyses that require those inputs cannot be reproduced from the repository contents alone. Run repository-relative script paths from the repository root. The analysis script also installs or loads R packages; a complete, verified dependency specification has not yet been established. See `analysis/README.md` for details.
 
 ## Citation
 
